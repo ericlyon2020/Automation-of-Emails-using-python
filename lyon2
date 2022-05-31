@@ -1,0 +1,52 @@
+import smtplib// email server package
+import speech_Recognition as sr   // voice recognizer
+import pyttsx3
+from email.message import EmailMessage
+listener = sr.Recognizer()
+engine = pyttsx3.init()
+
+def talk(text):
+    engine.say(text)
+engine.runAndWait()
+
+
+def get_info:
+    try:// incase there are two commas, then use the tab button
+        with sr.Recognizer() as source:
+             print('listening...')
+             voice = listner.listen(source)
+             info = listener.Recognize_google()
+             print(info)
+             return info.lower()
+except
+   pass
+def send_email(receiver, subject, message):
+      server = smtp.SMTP("smtp.gmail.com", 587)
+      server.starttls() // to show the gmail its your account
+      server.login('ericmug134@gmail.com','Ericmugo@2020')
+      email = EmailMessage()
+      email['From'] = 'ericmug134@gmail.com'
+      email['subject'] = subject
+      email.set_content(message)
+      server.send_message(message)
+
+email_list = {
+   'mugo':'mugoeric@gmailcom',
+   'ann':'ann234@gmail.com',
+   'john':'johnmwangi20@gmail.com',
+   'tony':'tonyyoung@gmail.com',
+   'kamau':'kamaujj@gmail.com',
+   'savanna':'savannapink@gmail.com',
+   'isabellah':'isabellahswee@gmail.com',
+}
+def get_email_info():
+       talk('To whom you want send email')
+       name = get_info()
+       receiver = email_list[name]
+       talk('what is the subject of your email')
+       subject = get_info()
+       talk('tell me the text in your email')
+       subject = get_info()
+
+send_email(receiver, subject, message)
+get_email_info()
